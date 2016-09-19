@@ -1,0 +1,15 @@
+version: '2'
+services:
+  mongo:
+#    image: mongo:2.6.12
+    build: ./mongo
+    container_name: mongodb
+    
+  tomcat-epcis:
+    build: ./tomcat
+    links:
+      - mongo
+    ports:
+      - 8080:8080
+    volumes:
+      - ./epcis/epcis.war:/usr/local/tomcat/webapps/epcis.war
