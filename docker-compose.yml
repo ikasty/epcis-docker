@@ -1,12 +1,11 @@
 version: '2'
 services:
   mongo:
-#    image: mongo:2.6.12
-    build: ./mongo
+    image: mongo:2.6.12
     container_name: mongodb
     
   tomcat-epcis:
-    build: ./tomcat
+    image: tomcat:8.0-jre8
     links:
       - mongo
     ports:
