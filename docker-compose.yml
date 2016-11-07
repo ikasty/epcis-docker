@@ -5,10 +5,8 @@ services:
     container_name: mongodb
     
   tomcat-epcis:
-    image: tomcat:8.0-jre8
+    image: ikasty/epcis
     links:
       - mongo
     ports:
       - 8080:8080
-    volumes:
-      - ./epcis/epcis.war:/usr/local/tomcat/webapps/epcis.war

@@ -1,10 +1,8 @@
 Docker environment for EPCIS
 ============================
 
-# How to use
+## How to use
 1. Install Docker
-2. Build Maven image from Dockerfile (`docker build . -t epcis`)
-3. Build epcis Maven app to epcis folder (`docker run -it --rm -v $(pwd)/epcis:/usr/src/webapp epcis`)
-4. Run app (`docker-compose up`)
+2. Run container (`docker run --link your_mongodb_name:mongo -it --rm ikasty/epcis`)
 
-Makefile is served for your convenience
+If you have custom code for EPCIS, add it to `source` folder. For your convenience, `docker-compose.yml` file is served. Type `docker-compose up`.
